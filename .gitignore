@@ -1,0 +1,29 @@
+## Build
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## Visual Studio
+.vs/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.rsuser
+
+## Rider
+.idea/
+
+## OS
+.DS_Store
+Thumbs.db
+
+## NuGet
+*.nupkg
+**/packages/
+
+## Test results
+[Tt]est[Rr]esult*/
+*.trx
+.cursor
