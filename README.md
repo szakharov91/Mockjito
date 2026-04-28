@@ -77,5 +77,4 @@ curl http://localhost:5000/hello
 - `Mockjito.Core` - OpenAPI loading, route extraction, fake response generation, middleware.
 
 ## License
-
-See the project repository.
+[MIT License](https://github.com/szakharov91/Mockjito?tab=MIT-1-ov-file#readme)
