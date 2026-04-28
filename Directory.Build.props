@@ -9,6 +9,11 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
+  <!-- Embed PDBs into assemblies during publish so no separate .pdb is emitted next to single-file output. -->
+  <PropertyGroup Condition="'$(PublishDir)' != ''">
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="SonarAnalyzer.CSharp">
       <PrivateAssets>all</PrivateAssets>

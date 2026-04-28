@@ -12,6 +12,18 @@ dotnet build Mockjito.sln -c Release
 
 Output binary: `Mockjito.ConsoleApp/bin/Release/net8.0/mockjito.dll` (or `mockjito.exe` after publishing).
 
+## Publish (single-file)
+
+Build a **self-contained** Windows **x64** executable where the runtime and dependencies are bundled into **one file**:
+
+```bash
+dotnet publish Mockjito.ConsoleApp/Mockjito.ConsoleApp.csproj -c Release -o publish
+```
+
+The output folder contains **only** `publish/mockjito.exe` (no sidecar DLLs, `appsettings`, or sample files). On first run, .NET may extract native/runtime files under the user temp directory (`%TEMP%\.net\`); nothing is written next to the `.exe`.
+
+Pass your OpenAPI file path to `--file` when starting the server (the spec is not embedded in the executable).
+
 ## Run
 
 When using `dotnet run --project Mockjito.ConsoleApp`, the process working directory is `Mockjito.ConsoleApp/`, so relative paths for `--file` are resolved from there (for example, `samples/minimal-openapi.json`).
