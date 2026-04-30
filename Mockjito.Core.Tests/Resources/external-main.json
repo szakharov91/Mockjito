@@ -1,0 +1,20 @@
+{
+  "openapi": "3.0.0",
+  "info": { "title": "Main", "version": "1.0.0" },
+  "paths": {
+    "/refd": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "./external-part.json#/components/schemas/X" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

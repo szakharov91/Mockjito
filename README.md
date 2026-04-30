@@ -4,6 +4,24 @@
 
 A **.NET 8** console utility that reads a local **OpenAPI 2/3** specification file (JSON or YAML), starts an in-memory **Kestrel** server, and serves generated JSON responses for all described endpoints (powered by **Bogus**). It is designed for local development and testing when the real API is unavailable.
 
+## Tests
+
+Run all tests:
+
+```bash
+dotnet test Mockjito.sln
+```
+
+Optional **local pre-commit** hook (runs `dotnet build` + `dotnet test` before each commit). Hooks are versioned under `.githooks/`. Activate once per clone:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+On Windows, Git runs this script with `sh` from **Git for Windows** (bundled with a typical Git install).
+
+**CI:** pushes and pull requests to `main` run build + tests via [`.github/workflows/ci.yml`](.github/workflows/ci.yml).
+
 ## Build
 
 ```bash
@@ -87,6 +105,7 @@ curl http://localhost:5000/hello
 
 - `Mockjito.ConsoleApp` - entry point, CLI (**System.CommandLine**), Kestrel host.
 - `Mockjito.Core` - OpenAPI loading, route extraction, fake response generation, middleware.
+- `Mockjito.Core.Tests` - unit tests (**xUnit**, **FluentAssertions**).
 
 ## License
 [MIT License](https://github.com/szakharov91/Mockjito?tab=MIT-1-ov-file#readme)
