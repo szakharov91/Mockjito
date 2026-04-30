@@ -1,0 +1,5 @@
+#!/bin/sh
+set -e
+echo "[pre-commit] dotnet build + test..."
+dotnet build Mockjito.sln -c Release --nologo
+dotnet test  Mockjito.sln -c Release --no-build --nologo --verbosity quiet

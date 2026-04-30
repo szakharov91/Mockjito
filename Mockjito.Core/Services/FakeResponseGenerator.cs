@@ -9,7 +9,7 @@ namespace Mockjito.Core.Services;
 /// <summary>
 /// Generates a JSON response from an OpenAPI schema using Bogus.
 /// </summary>
-public sealed class FakeResponseGenerator
+public class FakeResponseGenerator
 {
     private const int MaxDepth = 8;
     private const int DefaultMinNumber = 0;
@@ -20,7 +20,7 @@ public sealed class FakeResponseGenerator
     /// <summary>
     /// Builds a JSON node for the response schema.
     /// </summary>
-    public JsonNode Generate(IOpenApiSchema? schema, string? propertyHint = null)
+    public virtual JsonNode Generate(IOpenApiSchema? schema, string? propertyHint = null)
     {
         if (schema is null)
         {
